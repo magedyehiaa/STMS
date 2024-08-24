@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة القديس موريس الكشفية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>إدارة التدريب</h1>
+
+        <!-- قسم لفتح الملفات الثابتة -->
+        <div class="section" id="file-section">
+            <h2>المناهج</h2>
+            <ul id="file-list">
+                <li><a href="w:\PDFS\الخدمة\القديس موريس\مناهج\منهج براعم.pdf" target="_blank">منهج براعم</a></li>
+                <li><a href="w:\PDFS\الخدمة\القديس موريس\مناهج\منهج الشبل ذو النجم الاول.pdf" target="_blank">الشبل ذو النجم الاول</a></li>
+                <li><a href="w:\PDFS\الخدمة\القديس موريس\مناهج\منهج الشبل ذو النجم الثاني.pdf" target="_blank">الشبل ذو النجم الثاني</a></li>
+            </ul>
+        </div>
+
+        <!-- قسم لتتبع الحضور -->
+        <div class="section" id="attendance-section" style="display: none;">
+            <h2>متابعة الحضور</h2>
+            <ul id="attendance-list">   
+                <!-- سيتم إدراج سجلات الحضور هنا ديناميكيًا -->
+            </ul>
+            <select id="team-selection">
+                <option value="اشبال وزهرات">اشبال وزهرات</option>
+                <option value="كشاف ومرشدات">كشاف ومرشدات</option>
+                <option value="متقدم ورائدات">متقدم ورائدات</option>
+            </select>
+            <input type="text" id="participant-name" placeholder="أدخل اسم الشخص">
+            <button onclick="markAttendance()">تسجيل الحضور</button>
+            <button onclick="exportToExcel()">تحميل البيانات</button>
+
+        </div>
+    </div>
+
+    <!-- شريط التنقل السفلي -->
+    <div class="bottom-nav">
+        <button onclick="showSection('file')">فتح الملفات</button>
+        <button onclick="showSection('attendance')">تحضير الأشخاص</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+</body>
+
+</html>
